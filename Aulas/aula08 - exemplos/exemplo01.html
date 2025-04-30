@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" name="" id="num1" placeholder="DIGITE NUM1">
+    <input type="number" name="" id="num2" placeholder="DIGITE NUM2">
+    <br>
+    <button id="btn_somar" onclick="somar()">SOMAR</button>
+    <button id="btn_subtrair" onclick="subtrair()">SUBTRAIR</button>
+    <button id="btn_multiplicar" onclick="multiplicar()">MULTIPLICAR</button>
+    <button id="btn_dividir" onclick="dividir()">DIVIDIR</button>
+    <br>
+    <button id="btn_limpar" onclick="limpar()">LIMPAR</button>
+    <hr>
+    <p>O resultado é: <span id="resultado"></span>  </p>
+
+    <script>
+
+        var numero1 = document.getElementById("num1");
+        var numero2 = document.getElementById("num2");
+        var resultado = document.getElementById("resultado");
+
+        function somar(){
+            var n1 = parseInt(numero1.value);
+            var n2 = parseInt(numero2.value);                        
+            var soma = n1 + n2;
+            resultado.innerHTML = soma;
+        }
+        function subtrair(){  
+            var n1 = parseInt(numero1.value);
+            var n2 = parseInt(numero2.value);                      
+            let subtrair = n1 - n2;
+            resultado.innerHTML = subtrair;
+        }
+        function multiplicar(){  
+            var n1 = parseInt(numero1.value);
+            var n2 = parseInt(numero2.value);                      
+            let multiplicar = n1 * n2;
+            resultado.innerHTML = multiplicar;
+        }
+        function dividir(){  
+            var n1 = parseInt(numero1.value);
+            var n2 = parseInt(numero2.value); 
+            if (n2 == 0){
+                resultado.innerHTML = "<b style='color:red'> NÃO É PERMITIDA DIV POR ZERO</b>";  
+            }
+            else{
+                let dividir = n1 / n2;
+                resultado.innerHTML = dividir;     
+            }                    
+            
+        }
+        function limpar(){
+            numero1.value = "";
+            numero2.value = "";
+            resultado.innerHTML = "";
+        }
+    </script>
+</body>
+</html>
